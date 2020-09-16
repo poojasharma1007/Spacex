@@ -28,3 +28,5 @@ Screenshot links
  4. LightHouse Matrices
  https://user-images.githubusercontent.com/71031735/93326427-6682ec00-f836-11ea-89fc-b777fd3e1cd1.png
  
+LightHouse Report
+https://github.com/poojasharma1007/Spacex/files/5231570/Lighthouse_Spacex.pdf

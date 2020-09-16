@@ -1,0 +1,78 @@
+<body style="background-color:lightgrey">
+    <h2 style="margin-left: 2%;"><b>SpaceX Launch Programs</b></h2>
+    <div class="container-fluid" style="background-color:lightgrey;">
+      <div class="row" style="background-color:lightgrey;">
+        <div class="col-lg-3 col-sm-4 col-md-4 col-xs-12">
+          <div class="card text-center">
+            <div class="card-body">
+              <h4 class="card-title"><b>Filters</b></h4>
+              <p class="card-text"><u>Launch Year</u></p>
+              <div class="card-text" style="display: inline;" *ngFor="let a of year; let i = index">
+                <div *ngIf="i % 2 == 0" class="text-center">
+                  <button style="margin:8px; " *ngIf="i  < year.length" type="button" class="btn btn-success "
+                    #launchyear (click)="getLaunchData(launchyear)">{{year[i]}}</button>
+                  <button style="margin:8px;" *ngIf="i + 1 < year.length" type="button" class="btn btn-success"
+                    #launchyear (click)="getLaunchData(launchyear)">{{year[i+1]}}</button>
+                </div>
+              </div>
+              <p class="card-text"><u>Successful Launch</u></p>
+              <div class="list-group" style="display: inline;" *ngFor="let a of trueorfalse; let i = index">
+                <div *ngIf="i % 2 == 0" class="text-center">
+                  <button type="button" class="btn btn-success " *ngIf="i  < trueorfalse.length" #sucessdata
+                    (click)="getLaunchSuccessData(sucessdata)"
+                    style=" margin: 8px;">{{trueorfalse[i]}}</button>
+                  <button type="button" class="btn btn-success" *ngIf="i + 1 < trueorfalse.length" #sucessdata
+                    (click)="getLaunchSuccessData(sucessdata)"
+                    style=" margin: 8px;">{{trueorfalse[i+1]}}</button>
+                </div>
+              </div>
+              <p class="card-text"><u>Successful Landing</u></p>
+              <div class="list-group" style="display: inline;" *ngFor="let a of trueorfalse; let i = index">
+                <div *ngIf="i % 2 == 0" class="text-center">
+                  <button type="button" class="btn btn-success" *ngIf="i  < trueorfalse.length" #landing
+                    (click)="landingStatus(landing)"
+                    style=" margin: 8px;">{{trueorfalse[i]}}</button>
+                  <button type="button" class="btn btn-success" *ngIf="i+1  < trueorfalse.length" #landing
+                    (click)="landingStatus(landing)"
+                    style=" margin: 8px;">{{trueorfalse[i+1]}}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12 ">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-xs-12 card-group" *ngFor="let d of viewdata;let i=index ">
+              <div class="card" style="width: 18rem;margin: 0.8%;width: 100%;">
+                <div style=" background-color: #cccccc; margin: 5%; padding: 2%;">
+                  <img class="card-img-top" src="{{d.links.mission_patch}}" alt="space photo">
+                </div>
+                <div class="card-body">
+                  <ul style="list-style-type: none;" class="list-group list-group-flush">
+                    <li><span style="color:darkblue;font-size: large;">{{d.mission_name}} #{{d.flight_number}}</span></li>
+                    <br>
+                    <li><span style="text-align: left;color:black;font-size: small;"><b>Mission Id's:</b>{{viewdata.mission_id}}</span></li>
+                    <li>{{d.mission_id}}</li>
+                    <li><b>Launch Year :</b>{{d.launch_year}} </li>
+                    <li><b>Succesful Launch :</b>{{d.launch_success}}</li>
+                    <span *ngFor="let q of d.rocket.first_stage.cores">
+                      <li *ngIf="q.land_success" >
+                        <b>Succesful Landing : </b>{{q.land_success}}</li>
+                        <li *ngIf="!q.land_success" >
+                          <b>Succesful Landing : </b>NA</li>
+  
+                    </span>
+                    
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer font-small blue">
+        <div class="footer-copyright text-center py-3"><b>Developed by: {{username}}</b>
+        </div>
+      </footer>
+    </div>
+  </body>

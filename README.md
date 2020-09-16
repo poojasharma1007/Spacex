@@ -12,3 +12,19 @@ To open deployed version
 https://spacex-pooja.web.app/
 
 
+Screenshot links
+
+ 1. Mobile View
+ https://user-images.githubusercontent.com/71031735/93325761-6d5d2f00-f835-11ea-884e-d319946dcf4f.png
+ 
+ 2. Tablet View
+ https://user-images.githubusercontent.com/71031735/93325951-bdd48c80-f835-11ea-8114-c06ff1d91780.png
+ 
+ 3. Laptop View
+ https://user-images.githubusercontent.com/71031735/93326080-e9f00d80-f835-11ea-9f75-f514a7b1e1f3.png
+ 
+ 
+ 
+ 4. LightHouse Matrices
+ https://user-images.githubusercontent.com/71031735/93326427-6682ec00-f836-11ea-89fc-b777fd3e1cd1.png
+ 
